@@ -2,16 +2,24 @@
  * spi_master.c
  *
  * Created: 13-Jan-17 3:24:30 PM
- *  Author: Lokesh
+ *  Author: Agarwal-pc
  */ 
 
 
 #include <avr/io.h>
+#include<util/delay.h>
+#include <stdio.h>
+
+
+
 
 int main(void)
 {
-    while(1)
-    {
-        //TODO:: Please write your application code 
-    }
+	DDRB = 0x0B;
+	DDRD = 0xff;
+	spi_init();
+	spi_start();
+    spi_Write(0xaa);
 }
+
+
