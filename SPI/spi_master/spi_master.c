@@ -7,8 +7,9 @@
 
 
 #include <avr/io.h>
+#define F_CPU 16000000UL
 #include<util/delay.h>
-#include <stdio.h>
+//#include <stdio.h>
 
 
 
@@ -18,8 +19,7 @@ int main(void)
 	DDRB = 0x0B;
 	DDRD = 0xff;
 	spi_init();
-	spi_start();
-    spi_Write(0xaa);
+	spi_Start();
+	spi_Master_Write(0xaa);
+	return 0;
 }
-
-
